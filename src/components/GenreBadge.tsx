@@ -11,7 +11,7 @@ export const GenreBadge:FC<GenreBadgeProps> = ({ genreId }) => {
     );
     if (!genre) return null;
     return (
-        <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">
+        <span className="px-3 py-1.5 text-xs font-medium text-indigo-300 bg-indigo-900/30 rounded-full border border-indigo-800/50 backdrop-blur-sm transition hover:bg-indigo-900/50 hover:border-indigo-700/60 hover:scale-105">
             {genre.name}
         </span>
     );

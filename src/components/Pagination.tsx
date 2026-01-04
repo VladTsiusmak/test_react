@@ -1,4 +1,4 @@
-import type {FC} from "react";
+import type { FC } from "react";
 
 interface PaginationProps {
     page: number;
@@ -17,7 +17,6 @@ export const Pagination: FC<PaginationProps> = ({ page, totalPages, onChange }) 
         let start = Math.max(1, page - Math.floor(MAX_VISIBLE_PAGES / 2));
         const end = Math.min(totalPages, start + MAX_VISIBLE_PAGES - 1);
 
-
         start = Math.max(1, end - MAX_VISIBLE_PAGES + 1);
 
         const pages = [];
@@ -30,21 +29,27 @@ export const Pagination: FC<PaginationProps> = ({ page, totalPages, onChange }) 
     const pages = getPageNumbers();
 
     return (
-        <div className="flex justify-center items-center mt-6 gap-2 flex-wrap">
+        <div className="flex justify-center items-center mt-10 gap-2 flex-wrap">
             <button
                 onClick={handlePrev}
                 disabled={page === 1}
-                className="px-3 py-1 rounded-md border border-gray-300 bg-white hover:bg-gray-100 disabled:opacity-50"
+                className="px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200
+                           bg-gray-800/50 hover:bg-gray-700/70 border border-gray-700
+                           text-gray-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed
+                           backdrop-blur-sm"
             >
-                Prev
+                Попередня
             </button>
 
             {pages.map(p => (
                 <button
                     key={p}
                     onClick={() => onChange(p)}
-                    className={`px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-100 ${
-                        p === page ? "bg-indigo-500 text-white" : "bg-white"
+                    className={`px-4 py-2 min-w-10 rounded-lg font-medium text-sm transition-all duration-200 
+                                backdrop-blur-sm border ${
+                        p === page
+                            ? "bg-indigo-600 text-white border-indigo-500 shadow-lg shadow-indigo-900/30"
+                            : "bg-gray-800/50 text-gray-300 border-gray-700 hover:bg-gray-700/70 hover:text-white"
                     }`}
                 >
                     {p}
@@ -54,9 +59,12 @@ export const Pagination: FC<PaginationProps> = ({ page, totalPages, onChange }) 
             <button
                 onClick={handleNext}
                 disabled={page === totalPages}
-                className="px-3 py-1 rounded-md border border-gray-300 bg-white hover:bg-gray-100 disabled:opacity-50"
+                className="px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200
+                           bg-gray-800/50 hover:bg-gray-700/70 border border-gray-700
+                           text-gray-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed
+                           backdrop-blur-sm"
             >
-                Next
+                Наступна
             </button>
         </div>
     );
