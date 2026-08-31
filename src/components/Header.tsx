@@ -1,4 +1,4 @@
-import { type ChangeEvent, type FormEvent, useEffect } from "react";
+    import { type ChangeEvent, type FormEvent, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../redux/store.ts";
 import { getGenres } from "../redux/slices/genreSlice.ts";
