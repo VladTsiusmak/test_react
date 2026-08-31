@@ -2,6 +2,9 @@
 
 A responsive movie catalog web app built with **React + TypeScript + Vite**, powered by the [TMDB API](https://www.themoviedb.org/documentation/api).
 
+## 🚀 Live Demo
+Check out the deployed app: **[test-react-w5t9.vercel.app](https://test-react-w5t9.vercel.app)**
+
 ## Features
 
 - 🔍 Search movies by title
